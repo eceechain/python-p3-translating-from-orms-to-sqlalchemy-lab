@@ -2,7 +2,7 @@ from models import Dog
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 def create_table(base):
-   engine = create_engine('SQLITE_URL')  # You can replace this with your actual database URL
+   engine = create_engine('sqlite:///:Dogs.db')  # You can replace this with your actual database URL
    base.metadata.create_all(bind=engine)
 
 def save(session, dog):
